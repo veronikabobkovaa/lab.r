@@ -1,438 +1,655 @@
-// ЛАБОРАТОРНАЯ № 2
+// 4 лабораторная работа
+// const schemaBuilder = lf.schema.create("book shop_db", 1);
 
-// 4 ВАРИАНТ "ИЗБЫТОЧНЫЕ ЧИСЛА"
-// let n = Number(prompt('Введите число'));
-// let j = 0;
-// for(let i = 1; i < n; i++){
-//     if(n%i === 0){
-//         j+=i;
-//     }
-// }
-// if(n<j){
-//     console.log("Число избыточное!")
-// }
-// else{
-//     console.log('Попробуйте другое число')
-// }
+// schemaBuilder
+// .createTable("sections")
+// .addColumn("numberSections", lf.Type.INTEGER)
+// .addColumn("nameSections", lf.Type.STRING)
+// .addColumn("ageLimit", lf.Type.INTEGER)
+// .addPrimaryKey(["numberSections"]); 
 
+// schemaBuilder
+//   .createTable("books")
+//   .addColumn("book", lf.Type.STRING)
+//   .addColumn("author", lf.Type.STRING)
+//   .addColumn("placeOfPublication", lf.Type.STRING)
+//   .addColumn("publishingHouse", lf.Type.STRING)
+//   .addColumn("publicationDate", lf.Type.DATE_TIME)
+//   .addColumn("price", lf.Type.INTEGER)
+//   .addColumn("numberOfCopies", lf.Type.INTEGER)
+//   .addColumn("pages", lf.Type.INTEGER)
+//   .addColumn("purchaseDate", lf.Type.DATE_TIME)
+//   .addColumn("note", lf.Type.BOOLEAN)
+//   .addColumn("numberSections", lf.Type.INTEGER)
+//   .addPrimaryKey(["book"])
+//   .addForeignKey("fk_booksSections", {
+//     local: "numberSections",
+//     ref: "sections.numberSections",
+//   });
 
+//   schemaBuilder
+//   .createTable("quotes")
+//   .addColumn("book", lf.Type.STRING)
+//   .addColumn("page", lf.Type.INTEGER)
+//   .addColumn("quote", lf.Type.STRING)
+//   .addPrimaryKey(["quote"])
+//   .addForeignKey("fk_books", {
+//     local: "book",
+//     ref: "books.book",
+//   });
 
-// 1 ВАРИАНТ (не получается ввести else ??) "ПРОСТЫЕ ЧИСЛА"
-// let n = Number(prompt('Введите число'));
-// let j = 1;
-// for (let i = 2; i <= n; i++) { // Для всех i...
-//     for (let j = 2; j < i; j++) { // проверить, делится ли число..
-//       if (i % j == 0) continue; // не подходит, берём следующее
-//     }
-//     console.log("Число простое!");}
-
-
-// ЧТО-ТО ИЗ ИНТЕРНЕТА
-// let n = Number(prompt('Введите число'));;
-// for (let i = 2; i <= n; i++) {
-//   for (let j = 2; j <= i; j++) {
-//     if ((i % j == 0) && (j != i)) {
-//         console.log('прост')
-//       break;
-//     } else {
-//       console.log('непрост');
-//       break;
-//     }
-//   }
-// }
-
-
-
-//ПРОВЕРЯЕТ ЯВЛЯЕТСЯ ЛИ ЧИСЛО, ЧИСЛОМ АРМСТРОНГА
-// 6 вариант, но без отрезков(?) как их включить, чтобы ничего не сломать
-// let e, x, d = 0;
-// let b = prompt("Введите число");
-// x=b;
-// while (x > 0) {
-//   e = x % 10;
-//   x = parseInt(x/10); // метод parseInt() принимает в качестве аргумента строковое значение и возвращает целое число, которое соответствует указанному основанию системы счисления
-//   d = d + (e*e*e);
-// }
-// if (b==d)
-//    alert("данное число является числом Армстронга");
-// else
-//    alert("данное число не является числом Армстронга");
-
-
-// ЗАДАНИЕ: вывести столбец чисел от 1 до 100
-// let i = 0;
-// for (i = 0; i < 101; i++) { // используем существующую переменную
-//     alert(i); // 0, 1, 2
-//   }
-//   console.log(i)
-
-
-
-// 3 ВАРИАНТ
-// let n = Number(prompt('Введите число'));
-// let sum = 0;
-// for (let i = 1; i<n; i++);{
-//     if (n%i===0){
-//     sum = sum + i}
-//     }
-//     if (sum===n){
-//         console.log('Число совершенно')
-//     }
-//     else {
-//         console.log('Число не совершенно')
-//     }
-// ----------------------------------------------------------------------------------------------------------------------------------
-// 3 ЛАБОРАТОРНАЯ РАБОТА
-// меняет цельсия в фаренгейты
-// let grad = prompt ('Введите температуру в градусах Цельсия', '');
-// far = grad * 1.8 + 32;
-// alert  (far);
-
-// ЭТО ЧТО???
-// function FahrenheightConvert(celcius) {
-//   let fahrenheight = Math.round(9 / 5 * (celcius + 32));
-//   console.log ('fahrenheight');
-// }
-// FahrenheightConvert(celcius);
-
-
-
-// 4 ЗАДАНИЕ
-// Напишите функцию, которая спрашивает у пользователя количество вводимых чисел N.
-// Далее в программу по очереди вводятся N чисел.
-// Функция должна вывести сообщение о том, каких чисел больше: положительных или отрицательных.
-
-// function number(n) {
-//     let countpositive = 0;
-//     let countnegative = 0;
-//     for (let i = 1; i <= n; i++) {
-//         let e = Number(prompt('число'));
-
-//         if (e >= 0) {
-//             countpositive++;
-//         } else {
-//             countnegative++;
-//         }
-//     }
-
-//     if (countpositive > countnegative) {
-//         console.log('Больше положительных');
-//     } else if (countpositive == countnegative) {
-//         console.log('Одинаково');
-//     } else {
-//         console.log('Больше отрицательных');
-//     }
-// }
-// number(prompt('количество вводимых чисел N'));
-
-//8 ЗАДАНИЕ
-// Напишите функцию для перевода температуры в градусах Цельсия в градусы Фаренгейта.
-// Затем выведите соотношения температур, выраженных в градусах Цельсия и Фаренгейта.
-// Необходимо вывести температуры от 0 до 100 градусов Цельсия, кратные 10.
-
-
-// function cToF(celsius) {
-//     let cTemp = celsius;
-//     let cToFahr = cTemp * 9 / 5 + 32;
-//     let message = cTemp + 'C это ' + cToFahr + 'F.';
-//     console.log(message);
-// }
-
-// function fToC(fahrenheit) {
-//     let fTemp = fahrenheit;
-//     let fToCel = (fTemp - 32) * 5 / 9;
-//     let message = fTemp + 'F это ' + fToCel + 'C.';
-//     console.log(message);
-// }
-// cToF(0);
-// cToF(10);
-// cToF(20);
-// cToF(30);
-// cToF(40);
-// cToF(50);
-// cToF(60);
-// cToF(70);
-// cToF(80);
-// cToF(90);
-// cToF(100);
-//------------------------------------------------------------------------------------------
-
-
-
-// 4 ЛАБОРАТОРНАЯ РАБОТА
-
-
-// Создайте массив вещественных чисел как минимум из 5 элементов.
-// Добавьте в конец массива число 10.
-// Удалите из массива 2 элемента со второго по порядку элемента.
-// При помощи цикла выведите в консоль значения всех элементов массива.
-// При помощи цикла найдите сумму всех элементов массива.
-// На основе результата задания 3, найдите среднее арифметическое значение.
-// Среднее арифметическое массива - сумма элементов делённая на их количество.
-
-// const arr = [0, 1, 2, 3, 4];// console.log(arr); // console.log(arr.lenght);
-// arr.push(10);
-// arr.splice(1, 2); // console.log(arr);
-// for (let i = 0; i < arr.length; i++) {
-//     console.log(arr[i]);
-// }
-// let array = [0, 1, 2, 3, 4];
-// let sum = 0;
-// for (let item of array) {
-//     sum += item;
-// }
-// console.log(sum);
-
-// let ari = 0;
-// for (let item of arr) {
-//     ari += item;
-// }
-// let result = ari/arr.length;
-// console.log(result);
-//---------------------------------------------------------------------------------------------
-
-
-
-
-
-
-// ПРАКТИКА ОТ 18.11
-
-// Дан массив ФИО пользователей. Необходимо посчитать, сколько пользователей с именем, которое вводит пользователь, имеется в массиве.
-// const arr = ['Иванов Иван Иванович', 'БеЛьГЕР Ирина СЕРГеевна']
-// const substr = prompt('Введите поисковую строку').toLowerCase();
-// let flag = false;
-// for (let i = 0; i < arr.length; i++) {
-//     if (arr[i].toLowerCase().includes(substring)) {
-//         flag = time;
-//     }
-// }
-// if (flag) {
-//     console.log('Найдено');
-// } else { alert('Нет') }
-
-// Напишите функцию, которая принимает на вход количество (N) учеников в классе.
-// Функция последовательно спрашивает у пользователя данные о оценках N учеников. Функция должна вернуть среднюю оценку в классе.
-
-// function classroom(n) {
-//     let mark = 0
-//     let sum = 0
-//     for (let i = 0; i < n; i++) {
-//         mark = +prompt('Введите число')
-//         sum = sum + mark
-//     }
-//     return = sum / n
-// }
-// let n = +prompt('Введите число')
-// console.log(classroom(n));
-// ошибки там!!!!!!!!!!!!!
-
-// function Coly(N){
-//     let count = 0
-//     for(let i=0; i<N; i++){
-//         let V = 0
-//         V = +prompt('Введите число')
-//         if (V>5){
-//             count++
-//         }
-//     }
-//     returncount
-// }
-// let N = +prompt('Введите число');
-// console.log(Coly(N));
-//----------------------------------------------
+//   schemaBuilder.connect().then((db) => {
+//     console.log(db.getSchema());
+//     });
 
 // 5 ЛАБОРАТОРНАЯ РАБОТА
+// const database = await buildSchema();
 
-// const user = {
-//     surname: 'Иванов',
-//     name: 'Иван',
-//     patronymic: 'Иванович',
-//     age: '30',
-//     gender: 'мужской',
-
-// };
-
-// const user1 = {
-//     surname: 'Иванова',
-//     name: 'Иванесса',
-//     patronymic: 'Ивановна',
-//     age: '32',
-//     gender: 'женский',
-
-// };
-
-// const user2 = {
-//     surname: 'Алексеев',
-//     name: 'Алексей',
-//     patronymic: 'Алексеевич',
-//     age: '19',
-//     gender: 'мужской',
-
-// };
-
-// const user3 = {
-//     surname: 'Алексеева',
-//     name: 'Алексия',
-//     patronymic: 'Алексеевна',
-//     age: '21',
-//     gender: 'женский',
-
-// };
-
-// const user4 = {
-//     surname: 'Антонов',
-//     name: 'Антон',
-//     patronymic: 'Антонович',
-//     age: '40',
-//     gender: 'мужской',
-
-// };
-// const array = [user, user1, user2, user3, user4]
-// for (let i = 0; i < array.length; i++) {
-//     if (array[i].surname === 'Иванов') {
-//         console.log(i)
-//     }
-// }
-// array[3].age = Number(array[3].age) + 1
-// array[3].job = 'Программист'
-// user.hello = function () {
-//     console.log('Привет,' + ' я' + ' ' + this.name)
-// }
-// user.hello();
-
-
-
-
-// 6 ЛАБОРАТОРНАЯ РАБОТА
-
-// const user = {
-//     surname: 'Иванов',
-//     name: 'Иван',
-//     patronymic: 'Иванович',
-// };
-// const user1 = {
-//     surname: 'Иванова',
-//     name: 'Иванесса',
-//     patronymic: 'Ивановна',
-// };
-// const user2 = {
-//     surname: 'Алексеев',
-//     name: 'Алексей',
-//     patronymic: 'Алексеевич',
-// };
-// const user3 = {
-//     surname: 'Алексеева',
-//     name: 'Алексия',
-//     patronymic: 'Алексеевна',
-// };
-// const user4 = {
-//     surname: 'Антонов',
-//     name: 'Антон',
-//     patronymic: 'Антонович',
-// };
-
-// const users = [user, user1, user2, user3, user4]
-// for (const item of users) {
-//     item.SNP = item.surname[0].toUpperCase() + item.surname.slice(1) + ' ' + item.name[0].toUpperCase() + item.name.slice(1) + ' ' + item.patronymic[0].toUpperCase(0) + item.patronymic.slice(1)
-//     console.log(item.SNP)
-// };
-// const search = 'кс'.toLowerCase()
-// for (const item of users) {
-//     if (item.SNP.toLowerCase().includes(search)) {
-//         console.log(item.SNP)
-//     }
-//  }
-// //---------------------------------
-
-// 7 ЛАБОРАТОРНАЯ РАБОТА
-
-// const user = {
-//     surname: 'Иванов',
-//     name: 'Иван',
-//     patronymic: 'Иванович',
-//     age: '30',
-//     gender: 'мужской',
-
-// };
-
-// const user1 = {
-//     surname: 'Иванова',
-//     name: 'Иванесса',
-//     patronymic: 'Ивановна',
-//     age: '32',
-//     gender: 'женский',
-
-// };
-
-// const user2 = {
-//     surname: 'Алексеев',
-//     name: 'Алексей',
-//     patronymic: 'Алексеевич',
-//     age: '19',
-//     gender: 'мужской',
-
-// };
-
-// const user3 = {
-//     surname: 'Алексеева',
-//     name: 'Алексия',
-//     patronymic: 'Алексеевна',
-//     age: '21',
-//     gender: 'женский',
-
-// };
-
-// const user4 = {
-//     surname: 'Антонов',
-//     name: 'Антон',
-//     patronymic: 'Антонович',
-//     age: '14',
-//     gender: 'мужской',
-
-// };
-
-// const users = [user, user1, user2, user3, user4];
-// function sortUsers(users) {
-//     return users.sort((a, b) => {
-//         if (a.age > b.age) {
-//             return -1;
-//         }
-//         if (a.age < b.age) {
-//             return 1;
-//         }
-//         return 0;
-//     });
-// }
-// console.log(sortUsers(users)); // отсортировала по убыванию возраста
-
-// // женщины старше 30 лет
-// let newWoman = users.filter(function (obj){
-//     return obj.gender === 'женский' && obj.age > 30;
-//     });
-//     console.log(newWoman);
-
-// // 1 способ
-// const isAdults = users.every(user => {
-//     return user.age > '18'
-//   })
-//   console.log(isAdults);
-
-// 2 ПРАВИЛЬНЫЙ СПОСОБ определения взрослых юзеров
-// for (let i = 0; i < users.length; i++) {
-//      if (users.age >'18') {
-//           console.log('Все пользователи совершеннолетние')
-//    }
-//    else (users.age <'18'); {
-//         console.log('НЕ все пользователи совершеннолетние')
-//     }
-// }
-
-// // какие пользователи старше 18 3 способ
-// let result = users.filter(function(item, index, array){
-//     return item.age >= 18;
+// await saveSections({
+//   numberSections: 5,
+//   nameSections: "Научная литература",
+//   ageLimit: 0,
 // });
-// console.log(result);
 
-//------------------------------------
+// const sections = {
+//   numberSections: 3,
+//   nameSections: "Психология",
+//   ageLimit: 16,
+// }
+// await  saveSections(sections);
 
+// await saveSections({
+//   numberSections: 1,
+//   nameSections: "Графический роман",
+//   ageLimit: 18,
+// });
+
+// await saveBooks({
+//   book: "Грокаем алгоритмы" ,
+//   author: "Адитья Бхаргава",
+//   placeOfPublication: "Санкт-Петерберг",
+//   publishingHouse: "Дом печати - ВЯТКА",
+//   publicationDate: new Date("2022-06-01"),
+//   price: 889,
+//   numberOfCopies: 10,
+//   pages: 274,
+//   purchaseDate: new Date("2023-01-01"),
+//   note: false,
+//   numberSections: 5, 
+// })
+
+// await saveBooks({
+//   book:"Искусство любить" ,
+//   author: "Эрих Фромм",
+//   placeOfPublication: "Москва",
+//   publishingHouse: "Издательство АСТ",
+//   publicationDate: new Date("2021-03-05"),
+//   price: 499,
+//   numberOfCopies: 13,
+//   pages: 224,
+//   purchaseDate: new Date("2021-04-05"),
+//   note: true,
+//   numberSections: 3,
+// });
+
+// await saveBooks({
+//   book:"Девушка у моря" ,
+//   author: "Инио Асано",
+//   placeOfPublication: "Екатеринбург",
+//   publishingHouse: "Фабрика комиксов",
+//   publicationDate: new Date("2018-06-06"),
+//   price: 1300,
+//   numberOfCopies: 3,
+//   pages: 193,
+//   purchaseDate: new Date("2021-01-01"),
+//   note: true,
+//   numberSections: 1,
+// });
+
+// const quotes = {
+//   book:"Грокаем алгоритмы" ,
+//   page: 10,
+//   quote: "'Грокнуть' означает понять так полно, что наблюдатель становится частью объекта наблюдения...",  
+// };
+
+// await saveQuotes(quotes);
+
+// await saveQuotes({
+//   book:"Искусство любить" ,
+//   page: 176,
+//   quote: "Современный человек превратил себя в товар; он ощущает свою внутреннюю энергию как вклад, благодаря которому он получит наивысший доход с учетом своего положения и ситуации на личностном рынке",
+// });
+
+
+// await saveQuotes({
+//   book:"Девушка у моря" ,
+//   page: 88,
+//   quote: "Обычно я никогда не находила то, что искала. Но, может быть я с самого начала и не надеялась что-то найти?",
+// });
+
+
+// // сохранение секции в бд
+//  function saveSections(sections) {
+//   const sectionsTable = database.getSchema().table("sections");
+//   const row = sectionsTable.createRow(sections);
+
+//   return database.insertOrReplace().into(sectionsTable).values([row]).exec();
+// }
+
+// // сохранение книг в бд
+//  function saveBooks(books) {
+//   const booksTable = database.getSchema().table("books");
+//   const row = booksTable.createRow(books);
+
+//   return database.insertOrReplace().into(booksTable).values([row]).exec();
+// }
+
+// // сохранение цитат в бд
+// function saveQuotes(quotes) {
+//   const quotesTable = database.getSchema().table("quotes");
+//   const row = quotesTable.createRow(quotes);
+
+//   return database.insertOrReplace().into(quotesTable).values([row]).exec();
+// }
+
+// //почему лишние цитаты остались? ??????????
+// await printAllSections();
+// await printAllBooks();
+// await printAllQuotes();
+// console.log("=============================================================== КОНЕЦ 1 ЗАДАНИЯ ==========================================================================");
+
+
+
+// await updateBookByName({
+//   book:"Девушка у моря" ,
+//   author: "Инио Асано",
+//   placeOfPublication: "Москва",
+//   publishingHouse: "Азбука-Аттикус",
+//   publicationDate: new Date("2021-09-01"),
+//   price: 1569,
+//   numberOfCopies: 13,
+//   pages: 193,
+//   purchaseDate: new Date("2023-01-27"),
+//   note: true,
+//   numberSections: 1,
+
+// })
+
+// await updateBookPriceByNameBind('Девушка у моря', 1700);
+// await printAllBooks();
+
+
+// // обновление данных с параметризацией
+// function updateBookPriceByNameBind(booksName, newPrice) {
+//   const booksTable = database.getSchema().table("books");
+
+//   const query = database
+//     .update(booksTable)
+//     .set(booksTable.price, lf.bind(0))
+//     .where(booksTable.book.eq(lf.bind(1)));
+
+//   return query.bind([newPrice, booksName]).exec();
+// }
+// // изменяет цену первой книги, а не той, которую вписала, почему???
+
+
+// // обновление данных книг без параметризации
+//  function updateBookByName(books) {
+//   const booksTable = database.getSchema().table("books");
+
+//   return database
+//     .update(booksTable)
+//     .set(booksTable.author, books.author)
+//     .set(booksTable.placeOfPublication,books.placeOfPublication)
+//     .set(booksTable.publishingHouse, books.publishingHouse)
+//     .set(booksTable. publicationDate, books. publicationDate)
+//     .set(booksTable.price, books.price)
+//     .set(booksTable.numberOfCopies, books.numberOfCopies)
+//     .set(booksTable.pages, books.pages)
+//     .set(booksTable. purchaseDate, books. purchaseDate)
+//     .set(booksTable.note, books.note)
+//     .set(booksTable.numberSections, books.numberSections)
+//     .where(booksTable.book.eq(books.book)) // где books.book равен переданному через параметр функции book
+//     .exec();
+// }
+
+// console.log ('=============================================================== КОНЕЦ 2 ЗАДАНИЯ ====================================================================');
+
+// await printAllQuotes();
+// await deleteQuotesByPage(88);
+// await printAllQuotes();
+
+// await deleteQuotesByPageBind(10);
+// await printAllQuotes();
+
+// // удаление без параметризации
+// function deleteQuotesByPage(quotesPage) {
+//   const quotesTable = database.getSchema().table("quotes");
+
+//   return database
+//     .delete()
+//     .from(quotesTable)
+//     .where(quotesTable.page.eq(quotesPage))
+//     .exec();
+// }
+
+
+// // удаление с параметризацией
+// function deleteQuotesByPageBind(quotesPage) {
+//   const quotesTable = database.getSchema().table("quotes");
+//   const query = database
+//     .delete()
+//     .from(quotesTable)
+//     .where(quotesTable.page.eq(lf.bind(0)))
+//     return query.bind([quotesPage]).exec();
+// }
+
+// console.log ('=============================================================== КОНЕЦ 3 ЗАДАНИЯ ====================================================================');
+
+
+
+// function buildSchema() {
+//   const schemaBuilder = lf.schema.create("book shop_db", 5);
+//   schemaBuilder
+//   .createTable("sections")
+//   .addColumn("numberSections", lf.Type.INTEGER)
+//   .addColumn("nameSections", lf.Type.STRING)
+//   .addColumn("ageLimit", lf.Type.INTEGER)
+//   .addPrimaryKey(["numberSections"]); 
+  
+//   schemaBuilder
+//     .createTable("books")
+//     .addColumn("book", lf.Type.STRING)
+//     .addColumn("author", lf.Type.STRING)
+//     .addColumn("placeOfPublication", lf.Type.STRING)
+//     .addColumn("publishingHouse", lf.Type.STRING)
+//     .addColumn("publicationDate", lf.Type.DATE_TIME)
+//     .addColumn("price", lf.Type.INTEGER)
+//     .addColumn("numberOfCopies", lf.Type.INTEGER)
+//     .addColumn("pages", lf.Type.INTEGER)
+//     .addColumn("purchaseDate", lf.Type.DATE_TIME)
+//     .addColumn("note", lf.Type.BOOLEAN)
+//     .addColumn("numberSections", lf.Type.INTEGER)
+//     .addPrimaryKey(["book"])
+//     .addForeignKey("fk_booksSections", {
+//       local: "numberSections",
+//       ref: "sections.numberSections",
+//     });
+  
+//     schemaBuilder
+//     .createTable("quotes")
+//     .addColumn("book", lf.Type.STRING)
+//     .addColumn("page", lf.Type.INTEGER)
+//     .addColumn("quote", lf.Type.STRING)
+//     .addPrimaryKey(["quote"])
+//     .addForeignKey("fk_books", {
+//       local: "book",
+//       ref: "books.book",
+//     }); 
+    
+//    return schemaBuilder.connect();
+// }
+
+// //выводит в печать секции
+// function printAllSections() {
+//   const sectionsTable = database.getSchema().table("sections");
+
+//   return database.select().from(sectionsTable).exec().then(console.table);
+// }
+
+// //выводит в печать книги
+// function printAllBooks() {
+//   const booksTable = database.getSchema().table("books");
+
+//   return database.select().from(booksTable).exec().then(console.table);
+// }
+
+// //выводит в печать цитаты
+// function printAllQuotes() {
+//   const quotesTable = database.getSchema().table("quotes");
+
+//   return database.select().from(quotesTable).exec().then(console.table);
+// }
+//---------------------------------------------------------------------------------------------------------
+
+
+
+// // 6 ЛАБОРАТОРНАЯ РАБОТА
+
+
+
+// const database = await buildSchema();
+
+// await saveSections({
+//   numberSections: 5,
+//   nameSections: "Научная литература",
+//   ageLimit: 0,
+// });
+
+// const sections = {
+//   numberSections: 3,
+//   nameSections: "Психология",
+//   ageLimit: 16,
+// }
+// await  saveSections(sections);
+
+// await saveSections({
+//   numberSections: 1,
+//   nameSections: "Графический роман",
+//   ageLimit: 18,
+// });
+
+// await saveBooks({
+//   book: "Грокаем алгоритмы" ,
+//   author: "Адитья Бхаргава",
+//   placeOfPublication: "Санкт-Петерберг",
+//   publishingHouse: "Дом печати - ВЯТКА",
+//   publicationDate: new Date("2022-06-01"),
+//   price: 889,
+//   numberOfCopies: 10,
+//   pages: 274,
+//   purchaseDate: new Date("2023-01-01"),
+//   note: false,
+//   numberSections: 5, 
+// })
+
+// await saveBooks({
+//   book:"Искусство любить" ,
+//   author: "Эрих Фромм",
+//   placeOfPublication: "Москва",
+//   publishingHouse: "Издательство АСТ",
+//   publicationDate: new Date("2021-03-05"),
+//   price: 499,
+//   numberOfCopies: 13,
+//   pages: 224,
+//   purchaseDate: new Date("2021-04-05"),
+//   note: true,
+//   numberSections: 3,
+// });
+
+// await saveBooks({
+//   book:"Девушка у моря" ,
+//   author: "Инио Асано",
+//   placeOfPublication: "Екатеринбург",
+//   publishingHouse: "Фабрика комиксов",
+//   publicationDate: new Date("2018-06-06"),
+//   price: 1300,
+//   numberOfCopies: 3,
+//   pages: 193,
+//   purchaseDate: new Date("2021-01-01"),
+//   note: true,
+//   numberSections: 1,
+// });
+
+// const quotes = {
+//   book:"Грокаем алгоритмы" ,
+//   page: 10,
+//   quote: "'Грокнуть' означает понять так полно, что наблюдатель становится частью объекта наблюдения...",  
+// };
+
+// await saveQuotes(quotes);
+
+// await saveQuotes({
+//   book:"Искусство любить" ,
+//   page: 176,
+//   quote: "Современный человек превратил себя в товар; он ощущает свою внутреннюю энергию как вклад, благодаря которому он получит наивысший доход с учетом своего положения и ситуации на личностном рынке",
+// });
+
+
+// await saveQuotes({
+//   book:"Девушка у моря" ,
+//   page: 88,
+//   quote: "Обычно я никогда не находила то, что искала. Но, может быть я с самого начала и не надеялась что-то найти?",
+// });
+
+
+// // сохранение секции в бд
+//  function saveSections(sections) {
+//   const sectionsTable = database.getSchema().table("sections");
+//   const row = sectionsTable.createRow(sections);
+
+//   return database.insertOrReplace().into(sectionsTable).values([row]).exec();
+// }
+
+// // сохранение книг в бд
+//  function saveBooks(books) {
+//   const booksTable = database.getSchema().table("books");
+//   const row = booksTable.createRow(books);
+
+//   return database.insertOrReplace().into(booksTable).values([row]).exec();
+// }
+
+// // сохранение цитат в бд
+// function saveQuotes(quotes) {
+//   const quotesTable = database.getSchema().table("quotes");
+//   const row = quotesTable.createRow(quotes);
+
+//   return database.insertOrReplace().into(quotesTable).values([row]).exec();
+// }
+
+
+// await printAllSections();
+// await printAllBooks();
+// await printAllQuotes();
+// //console.log(await getBooksWithSections()); //неяв внутр
+// // console.log (await  getSectionsWithBooks()); //левое соединение
+// //console.log(await  getBooksByNote());
+// //console.log(await findBooksByStartDateLessThan(new Date("2023-01-01")));
+
+// // console.log(
+// // await  findBooksByPublicationDateBetween(
+// // new Date("2020-01-01"),
+// // new Date("2022-12-31")
+// //   )
+// // );
+
+// //console.log(await getBooksByPrice());
+
+// console.log(await getBooksBySectionsName()); //(запрос со сложным условием не выполняется)
+// //console.log(findTheLowestBookPrice());
+// //console.log(getCostOfAllBooks());
+// //console.log(await findTheNewestBook());
+
+// // 1. левое соединение
+
+// function getSectionsWithBooks() {
+//   const booksTable = database.getSchema().table("books");
+//   const sectionsTable = database.getSchema().table("sections");
+
+//   return database
+//     .select()
+//     .from(sectionsTable)
+//     .leftOuterJoin(booksTable, sectionsTable. numberSections.eq(booksTable. numberSections))
+//     .exec();
+// }
+
+
+
+
+// // 2. неявное внутреннее соединение (только к 1 книжке?)
+// function getBooksWithSections() {
+//   const booksTable = database.getSchema().table("books");
+//   const sectionsTable = database.getSchema().table("sections");
+
+//   return database
+//     .select()
+//     .from(sectionsTable)
+//     .innerJoin(booksTable, sectionsTable. numberSections.eq(booksTable. numberSections))
+//     //.where(booksTable.numberSections.eq(sectionsTable.numberSections.eq))
+//     .exec();
+// }
+
+// //3. 1ый запрос с различными предикатами фильтрации (не вывел примечание?)
+
+// function getBooksByNote(){
+//   const booksTable = database.getSchema().table("books");
+
+//   return database
+//   .select()
+//   .from(booksTable)
+//   .where(booksTable.note.eq(true))
+//   .exec();
+// }
+
+
+// // 2ой запрос вывел все книги,  которые продались раньше 2023.01.01 
+// function findBooksByStartDateLessThan(date) {
+//   const booksTable = database.getSchema().table("books");
+
+//   return database
+//     .select()
+//     .from(booksTable)
+//     .where(booksTable.purchaseDate.lt(date))
+//     .exec();
+// }
+
+// // 3ий запрос выводит книги, если их опубликовали в заданный период
+// function findBooksByPublicationDateBetween(startDate, endDate) {
+//   const booksTable = database.getSchema().table("books");
+
+//   return database
+//     .select()
+//     .from(booksTable)
+//     .where(booksTable. publicationDate.between(startDate, endDate))
+//     .exec();
+// }
+
+// // 4ый выводит книгу, с заданной ценой
+// function getBooksByPrice(){
+//   const booksTable = database.getSchema().table("books");
+
+//   return database
+//   .select()
+//   .from(booksTable)
+//   .where(booksTable.price.eq("1300"))
+//   .exec();
+// }
+
+
+
+// // 4. Запрос со сложным условием ( не выполняется)
+// function getBooksBySectionsName() {
+//   const booksTable = database.getSchema().table("books");
+//   const sectionsTable = database.getSchema().table("sections");
+
+//   return database
+//     .select()
+//     .from(booksTable)
+//     .innerJoin(sectionsTable, booksTable.numberSections.eq(sectionsTable.numberSections))
+//     .where(
+//       lf.op.and(
+//         sectionsTable.nameSections.in(["Психология", "Научная литература"]),
+//         booksTable.note.eq(false)
+//       )
+//     )
+//     .exec();
+// }
+
+// // 6.  1ый запрос выводить самую дешёвую книгу
+// function findTheLowestBookPrice() {
+//   const booksTable = database.getSchema().table("books");
+
+//   return database
+//     .select(lf.fn.min(booksTable.price))
+//     .from(booksTable)
+//     .exec();
+// }
+
+// // 2ой запрос выводить сумму стоимости всех 3х книг
+// function getCostOfAllBooks() {
+//   const booksTable = database.getSchema().table("books");
+
+//   return database
+//     .select(lf.fn.sum(booksTable.price))
+//     .from(booksTable)
+//     .exec();
+// }
+
+// // 3ий запрос выводит самую ново-напечатанную книгу
+// function findTheNewestBook() {
+//   const booksTable = database.getSchema().table("books");
+
+//   return database
+//     .select(lf.fn.max(booksTable.publicationDate))
+//     .from(booksTable)
+//     .exec();
+// }
+
+
+
+// function buildSchema() {
+//   const schemaBuilder = lf.schema.create("book shop_db", 5);
+//   schemaBuilder
+//   .createTable("sections")
+//   .addColumn("numberSections", lf.Type.INTEGER)
+//   .addColumn("nameSections", lf.Type.STRING)
+//   .addColumn("ageLimit", lf.Type.INTEGER)
+//   .addPrimaryKey(["numberSections"]); 
+  
+//   schemaBuilder
+//     .createTable("books")
+//     .addColumn("book", lf.Type.STRING)
+//     .addColumn("author", lf.Type.STRING)
+//     .addColumn("placeOfPublication", lf.Type.STRING)
+//     .addColumn("publishingHouse", lf.Type.STRING)
+//     .addColumn("publicationDate", lf.Type.DATE_TIME)
+//     .addColumn("price", lf.Type.INTEGER)
+//     .addColumn("numberOfCopies", lf.Type.INTEGER)
+//     .addColumn("pages", lf.Type.INTEGER)
+//     .addColumn("purchaseDate", lf.Type.DATE_TIME)
+//     .addColumn("note", lf.Type.BOOLEAN)
+//     .addColumn("numberSections", lf.Type.INTEGER)
+//     .addPrimaryKey(["book"])
+//     .addForeignKey("fk_booksSections", {
+//       local: "numberSections",
+//       ref: "sections.numberSections",
+//     });
+  
+//     schemaBuilder
+//     .createTable("quotes")
+//     .addColumn("book", lf.Type.STRING)
+//     .addColumn("page", lf.Type.INTEGER)
+//     .addColumn("quote", lf.Type.STRING)
+//     .addPrimaryKey(["quote"])
+//     .addForeignKey("fk_books", {
+//       local: "book",
+//       ref: "books.book",
+//     }); 
+    
+//    return schemaBuilder.connect();
+// }
+
+// //выводит в печать секции
+// function printAllSections() {
+//   const sectionsTable = database.getSchema().table("sections");
+
+//   return database.select().from(sectionsTable).exec().then(console.table);
+// }
+
+// //выводит в печать книги
+// function printAllBooks() {
+//   const booksTable = database.getSchema().table("books");
+
+//   //return database.select().from(booksTable).exec().then(console.table);
+//   // 5. СОРТИРОВКА ПО ВОЗРАСТАНИЮ
+//   return (
+//     database
+//       .select()
+//       .from(booksTable)
+//       .orderBy(booksTable. book, lf.Order.ASC)
+//       .exec()
+//       .then(console.table)
+//   );
+// }
+
+
+// //выводит в печать цитаты
+// function printAllQuotes() {
+//   const quotesTable = database.getSchema().table("quotes");
+
+//   return database.select().from(quotesTable).exec().then(console.table);
+// }
+
+
+
+db.select(table1.name1, table1.name2).from(table1).exec()

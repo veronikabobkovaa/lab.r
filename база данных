@@ -1,0 +1,67 @@
+// const schemaBuilder = lf.schema.create("university_db", 1);
+// пример
+// schemaBuilder
+//   .createTable("group")
+//   .addColumn("id", lf.Type.INTEGER)
+//   .addColumn("department", lf.Type.STRING)
+//   .addColumn("partTime", lf.Type.BOOLEAN)
+//   .addPrimaryKey(["id"]);
+
+// schemaBuilder
+//   .createTable("student")
+//   .addColumn("id", lf.Type.INTEGER)
+//   .addColumn("fullName", lf.Type.STRING)
+//   .addColumn("educationStartDate", lf.Type.DATE_TIME)
+//   .addColumn("groupNumber", lf.Type.INTEGER)
+//   .addColumn("email", lf.Type.STRING)
+//   .addColumn("phone", lf.Type.STRING)
+//   .addPrimaryKey(["id"])
+//   .addNullable(["phone"])
+//   .addUnique("uq_email", ["email"])
+
+//   бд библиотеки
+
+const schemaBuilder = lf.schema.create("book shop_db", 1);
+
+schemaBuilder
+.createTable("sections")
+.addColumn("numberSections", lf.Type.INTEGER)
+.addColumn("nameSections", lf.Type.STRING)
+.addColumn("ageLimit", lf.Type.INTEGER)
+.addPrimaryKey(["numberSections"]); 
+
+schemaBuilder
+  .createTable("books")
+  .addColumn("book", lf.Type.STRING)
+  .addColumn("author", lf.Type.STRING)
+  .addColumn("placeOfPublication", lf.Type.STRING)
+  .addColumn("publishingHouse", lf.Type.STRING)
+  .addColumn("publicationDate", lf.Type.DATE_TIME)
+  .addColumn("price", lf.Type.INTEGER)
+  .addColumn("numberOfCopies", lf.Type.INTEGER)
+  .addColumn("pages", lf.Type.INTEGER)
+  .addColumn("purchaseDate", lf.Type.DATE_TIME)
+  .addColumn("note", lf.Type.BOOLEAN)
+  .addColumn("numberSections", lf.Type.STRING)
+  .addPrimaryKey(["book"])
+  .addForeignKey("fk_booksSections", {
+    local: "numberSections",
+    ref: "sections.numberSections",
+  });
+
+  schemaBuilder
+  .createTable("quotes")
+  .addColumn("book", lf.Type.STRING)
+  .addColumn("page", lf.Type.INTEGER)
+  .addColumn("quotes", lf.Type.STRING)
+  .addPrimaryKey(["quotes"])
+  .addForeignKey("fk_books", {
+    local: "book",
+    ref: "books.book",
+  });
+
+  schemaBuilder.connect().then((db) => {
+    console.log(db.getSchema());
+    });
+
+  
