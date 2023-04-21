@@ -1,0 +1,152 @@
+body {
+    background-color: blueviolet;
+    background-image: url(https://i.pinimg.com/564x/f8/a3/a6/f8a3a6aaea7e19eea8a022bba090c5dd.jpg);
+    background-repeat: repeat-y;
+}
+
+h1,
+h2 {
+    font-size: x-large;
+    color: rgb(29, 28, 28);
+    margin-left: 50px;
+}
+
+p,
+ol,
+ul,
+a {
+    color: rgb(248, 251, 255);
+    padding-left: 40px;
+}
+
+i {
+    background-color: black;
+    border-style: inset;
+}
+
+.content {
+    display: flex;
+    margin: 10px;
+    margin-left: 550px;
+}
+
+
+.content-right {
+    background-color: rgb(234, 112, 206);
+    border-radius: 10px;
+}
+
+.content-left {
+    background-color: rgb(234, 112, 206);
+    margin: 20px;
+    padding-left: 20px;
+    border-radius: 13px;
+}
+
+img {
+    width: 350px;
+    height: 200px;
+}
+
+.header {
+    background-color: rgb(0, 0, 0);
+    text-align: right;
+}
+
+.container {
+    background-color: palevioletred
+}
+
+.block {
+    background-color: plum;
+    width: 200px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img {
+    display: block;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.container-2 {
+    background-color: rgb(149, 46, 149);
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.block-2 {
+    background-color: plum;
+    width: 100px;
+    height: 100px;
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+
+.container-3 {
+    background-color: palevioletred;
+    border-style: dashed;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.block-3 {
+    background-color: plum;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.container-4 {
+    margin: 10px;
+}
+
+.blocks-wrapper {
+    border: 5px solid black;
+    background-color: white;
+}
+
+/* .block-4 {
+    width: 200px;
+    height: 200px;
+    margin: 100px;
+    background-color: white;
+    border: 4px solid green;
+} */
+
+.static-block {
+    background-color: white;
+    border: 4px solid red;
+    position: relative;
+    left: 5px;
+    right: 500px;
+    top: 30px;
+    bottom: 300px;
+}
+
+.relative-block {
+    background-color: white;
+    border: 4px solid blue;
+    position: relative;
+    left: 100px;
+    right: 100px;
+    top: 2px;
+    bottom: 10px;
+}
+
+.static-block2 {
+    background-color: white;
+    border: 4px solid green;
+    position: relative;
+    left: 200px;
+    right: 600px;
+    top: -50px;
+    bottom: 10px;
+}
